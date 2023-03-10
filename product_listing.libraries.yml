@@ -1,0 +1,18 @@
+product_listing:
+  version: 1.x
+  css:
+    layout:
+      css/product_my.css: {}    
+    theme:
+     # css/bootstrap.min.css: {}
+      css/product_ie.css: {}
+  js:
+   # js/jquery.min.js: {}
+   # js/jquery.dataTables.min.js: {}
+   # js/dataTables.bootstrap.min.js: {}
+   # js/jquery.tablesorter.min.js: {}    
+    js/product_addmore.js: {}
+    js/product_custom_ajax.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

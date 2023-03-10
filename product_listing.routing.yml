@@ -1,0 +1,56 @@
+product_listing.product:
+  path: '/admin/product'
+  defaults:
+    _controller: 'Drupal\product_listing\Controller\ProductController::product'
+    _title: 'Product Listing'
+  requirements:
+    _custom_access: '\Drupal\product_listing\Controller\ProductController::access'
+  options:
+    _admin_route: 'TRUE'
+product_listing.productkeyword:
+  path: '/admin/product/productkeyword/{sort}/{colname}/{sk1}'
+  defaults:
+    _controller: 'Drupal\product_listing\Controller\ProductController::productkeyword'
+    _title: 'Product Keyword Listing'
+  requirements:
+    _custom_access: '\Drupal\product_listing\Controller\ProductController::keyaccess'
+  options:
+    _admin_route: 'TRUE'    
+product_listing.category:
+  path: '/admin/product/category/{sort}/{colname}'
+  defaults:
+    _controller: 'Drupal\product_listing\Controller\ProductController::category'
+    _title: 'Product Category Listing'
+  requirements:
+    _custom_access: '\Drupal\product_listing\Controller\ProductController::cataccess'
+  options:
+    _admin_route: 'TRUE'  
+product_listing.productrank:
+  path: '/admin/product/productrank/{sort}/{colname}/{sk1}'
+  defaults:
+    _controller: 'Drupal\product_listing\Controller\ProductController::productrank'
+    _title: 'Product Rank Listing'
+  requirements:
+    _custom_access: '\Drupal\product_listing\Controller\ProductController::rankaccess'
+  options:
+    _admin_route: 'TRUE'
+product_listing.productranking:
+  path: '/admin/product/productranking/{sort}/{colname}/{sk1}'
+  defaults:
+    _controller: 'Drupal\product_listing\Controller\ProductController::productranking'
+    _title: 'Product Rank Listing'
+  options:
+      query:
+        token: ""  
+  requirements:
+    _custom_access: '\Drupal\product_listing\Controller\ProductController::praccess' 
+product_listing.productlist:
+  path: '/admin/product/productlist/{sort}/{colname}/{sk1}'
+  defaults:
+    _controller: 'Drupal\product_listing\Controller\ProductController::productlist'
+    _title: 'Product Sale Listing'
+  options:
+      query:
+        token: ""    
+  requirements:
+    _custom_access: '\Drupal\product_listing\Controller\ProductController::listaccess'  

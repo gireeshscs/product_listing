@@ -1,0 +1,9 @@
+name: "Product Listing"
+description: "A custom module for Managing rank to Product Category Listing, Product Sale Listing and Product Rank in DFF importer"
+type: module
+core_version_requirement: ^8.8 || ^9
+package: DFF
+dependencies:
+  - DFF:dff_importer
+  - DFF:supply_rank
+

@@ -1,0 +1,69 @@
+<?php
+/*
+ * @file
+ * code for product_listing module
+*/
+
+/**
+ * Implements hook_toolbar().
+ */
+function product_listing_toolbar() {
+    $items = [];
+
+    $items['product'] = [
+        '#cache' => [
+            'contexts' => ['user.permissions'],
+        ],
+    ];
+
+    if (!\Drupal::currentUser()->hasPermission('access content')) {
+        return $items;
+    }
+
+
+    $items['product'] += [
+        '#type' => 'toolbar_item',
+        '#weight' => 3,
+        'tab' => [
+            '#type' => 'link',
+            '#title' => 'Product Listing',
+            '#url' => \Drupal\Core\Url::fromUri("internal:/admin/product"),
+            //'#attributes' => [
+            //    'title' => 'Boutique menu',
+            //    'class' => ['toolbar-icon', 'toolbar-icon-boutique'],
+            //],
+        ],
+	];
+       /* 'tray' => [
+
+            'configuration' => [
+                '#type' => 'link',
+                '#title' => 'Commandes',
+                '#url' => \Drupal\Core\Url::fromUri("internal:/admin/dff"),
+
+            ],[
+                '#type' => 'link',
+                '#title' => 'Livraison',
+                '#url' => \Drupal\Core\Url::fromUri("internal:/admin/dff"),
+
+            ],
+            [
+                '#type' => 'link',
+                '#title' => 'Configuration',
+                '#url' => \Drupal\Core\Url::fromUri("internal:/admin/dff"),
+
+            ],
+
+        ],
+        '#attached' => array(
+            'library' => array(
+                'dff/admin',
+            ),
+        ),
+
+    ];
+    */
+    
+    return $items;
+}
+?>
